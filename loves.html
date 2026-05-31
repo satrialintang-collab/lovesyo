@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Cutest Girl Ever — From Pria Gelombang Laut</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --deep-red: #8B0000;
+            --dark-red: #4a0000;
+            --blood-red: #660000;
+            --crimson: #DC143C;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --soft-red: #b22222;
+        }
+
+        body {
+            background: var(--black);
+            color: #e8e0d5;
+            font-family: 'Cormorant Garamond', serif;
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+
+        /* Particle Background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(139, 0, 0, 0.4);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) translateX(100px); opacity: 0; }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(180deg, var(--black) 0%, var(--dark-red) 100%);
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 0, 0, 0.15) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        .heart-icon {
+            font-size: 3rem;
+            color: var(--crimson);
+            margin-bottom: 1.5rem;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(220, 20, 60, 0.5);
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+        }
+
+        .headline {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 400;
+            color: #fff;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 30px rgba(139, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .headline::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--crimson), transparent);
+            margin: 1rem auto;
+        }
+
+        .sub-headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.15em;
+            animation: fadeInUp 2s ease-out 0.5s both;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-bottom: 2px solid var(--crimson);
+            border-right: 2px solid var(--crimson);
+            transform: rotate(45deg);
+            margin: -10px;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Love Letter Section */
+        .love-letter {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .letter-container {
+            background: linear-gradient(135deg, rgba(74, 0, 0, 0.3) 0%, rgba(10, 10, 10, 0.8) 100%);
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            border-radius: 4px;
+            padding: 3rem;
+            position: relative;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .letter-container::before {
+            content: '❝';
+            position: absolute;
+            top: -20px;
+            left: 2rem;
+            font-size: 4rem;
+            color: var(--deep-red);
+            opacity: 0.5;
+        }
+
+        .letter-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--crimson);
+            margin-bottom: 2rem;
+            text-align: center;
+            letter-spacing: 0.1em;
+        }
+
+        .letter-body {
+            font-size: 1.25rem;
+            line-height: 2.2;
+            color: rgba(255, 255, 255, 0.85);
+            text-align: justify;
+            text-indent: 2rem;
+        }
+
+        .letter-body p {
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInText 1s ease-out forwards;
+        }
+
+        .letter-body p:nth-child(1) { animation-delay: 0.2s; }
+        .letter-body p:nth-child(2) { animation-delay: 0.4s; }
+        .letter-body p:nth-child(3) { animation-delay: 0.6s; }
+        .letter-body p:nth-child(4) { animation-delay: 0.8s; }
+        .letter-body p:nth-child(5) { animation-delay: 1.0s; }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 2rem;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--crimson);
+        }
+
+        /* Flowers Section */
+        .flowers-section {
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            text-align: center;
+            color: var(--crimson);
+            margin-bottom: 3rem;
+            letter-spacing: 0.1em;
+        }
+
+        .section-title span {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.5rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .flowers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .flower-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            background: var(--dark-gray);
+            border: 1px solid rgba(139, 0, 0, 0.2);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            cursor: pointer;
+        }
+
+        .flower-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(139, 0, 0, 0.3);
+        }
+
+        .flower-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            filter: brightness(0.8) contrast(1.1);
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+
+        .flower-card:hover img {
+            filter: brightness(1) contrast(1);
+            transform: scale(1.05);
+        }
+
+        .flower-info {
+            padding: 1.5rem;
+            text-align: center;
+            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8));
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .flower-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+
+        .flower-meaning {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 4rem 2rem 6rem;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(180deg, var(--black) 0%, var(--dark-red) 50%, var(--black) 100%);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            aspect-ratio: 3/2;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            border: 2px solid rgba(139, 0, 0, 0.3);
+            background: var(--dark-gray);
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item:nth-child(1) { grid-column: span 2; }
+        .gallery-item:nth-child(4) { grid-column: span 2; }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(30%) brightness(0.9);
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item:hover {
+            border-color: var(--crimson);
+            transform: scale(1.02);
+            z-index: 10;
+        }
+
+        .gallery-item:hover img {
+            filter: grayscale(0%) brightness(1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            font-style: italic;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--black);
+            border-top: 1px solid rgba(139, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-heart {
+            font-size: 2rem;
+            color: var(--crimson);
+            animation: heartbeat 1.5s ease-in-out infinite;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                aspect-ratio: auto;
+            }
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(4) {
+                grid-column: span 1;
+            }
+            .gallery-item {
+                aspect-ratio: 1;
+            }
+        }
+
+        /* Reveal on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="heart-icon">❤</div>
+            <h1 class="headline">To Cutest Girl Ever</h1>
+            <p class="sub-headline">From Pria Gelombang Laut</p>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('letter').scrollIntoView({behavior: 'smooth'})">
+            <span></span>
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Love Letter Section -->
+    <section class="love-letter" id="letter">
+        <div class="letter-container reveal">
+            <h2 class="letter-title">Ungkapan Cinta</h2>
+            <div class="letter-body">
+                <p>
+                    Di tengah gemuruh ombak yang tak pernah lelah menepi, aku menemukan ketenangan yang tak pernah kusangka—dirimu. Seperti gelombang laut yang setia kembali ke pantai, hatiku selalu berlabuh pada dirimu, tak peduli seberapa jauh aku terbawa arus.
+                </p>
+                <p>
+                    Setiap kali matahari terbenam di ufuk barat, aku teringat senyummu yang lebih hangat dari cahaya senja. Kamu adalah puisi yang tak pernah selesai kutulis, melodi yang terus berkumandang di relung hatiku, dan mimpi indah yang tak ingin kubangunkan.
+                </p>
+                <p>
+                    Seperti bunga poppy yang tumbuh liar namun mempesona, mawar yang indah namun berduri, dan gerbera yang ceria memancarkan kehangatan—kamu adalah perpaduan sempurna dari semua keindahan dunia ini. Kamu kuat sekaligus lembut, berani namun penuh kasih.
+                </p>
+                <p>
+                    Aku tak bisa menjanjikan lautan tanpa badai, tapi aku berjanji akan menjadi pelampungmu saat gelombang menghantam. Aku tak bisa menjanjikan langit tanpa awan, tapi aku berjanji akan menjadi pelangi setelah hujan reda.
+                </p>
+                <p>
+                    Karena bagiku, kamu bukan sekadar tujuan—kamu adalah rumah yang selalu kukenangi, pelabuhan hatiku yang tak pernah salah arah. Selamanya, aku milikmu, seperti laut miliknya pantai.
+                </p>
+            </div>
+            <div class="signature">
+                — Pria Gelombang Laut<br>
+                <small style="color: rgba(255,255,255,0.4); font-size: 0.9rem;">Dengan segenap cinta yang mengalir tak terbatas</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flowers Section -->
+    <section class="flowers-section">
+        <h2 class="section-title reveal">
+            Bunga-Bunga Cinta
+            <span>Setiap kelopak membawa makna tulus dariku untukmu</span>
+        </h2>
+        <div class="flowers-grid">
+            <div class="flower-card reveal">
+                <img src="https://kimi-web-img.moonshot.cn/img/w0.peakpx.com/85cabe7c01ef3be2845250193d6c8e7922f01dbf.jpg" alt="Poppy">
+                <div class="flower-info">
+                    <div class="flower-name">Poppy</div>
+                    <div class="flower-meaning">Keindahan yang liar & cinta yang tak terduga</div>
+                </div>
+            </div>
+            <div class="flower-card reveal">
+                <img src="https://kimi-web-img.moonshot.cn/img/www.shutterstock.com/2b4d0634c0670ddca4dc48d9ea01f65f9d20127e.jpg" alt="Rose">
+                <div class="flower-info">
+                    <div class="flower-name">Rose</div>
+                    <div class="flower-meaning">Cinta mendalam & keanggunan abadi</div>
+                </div>
+            </div>
+            <div class="flower-card reveal">
+                <img src="https://kimi-web-img.moonshot.cn/img/c8.alamy.com/95611ef7948477b344e5a9edf8ead18ef8f1275c.jpg" alt="Gerbera">
+                <div class="flower-info">
+                    <div class="flower-name">Gerbera</div>
+                    <div class="flower-meaning">Kebahagiaan sederhana & kehangatan hati</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section">
+        <h2 class="section-title reveal">
+            Kenangan Indahmu
+            <span>Setiap foto adalah cerita cinta yang tak terlupakan</span>
+        </h2>
+        <div class="gallery-grid reveal">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=400&fit=crop" alt="Foto 1">
+                <div class="gallery-caption">Senyum yang mencerahkan hariku</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop" alt="Foto 2">
+                <div class="gallery-caption">Keanggunan yang tak tertandingi</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop" alt="Foto 3">
+                <div class="gallery-caption">Mata yang berkilau bak bintang</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=400&fit=crop" alt="Foto 4">
+                <div class="gallery-caption">Kecantikan yang tak lekang oleh waktu</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=400&fit=crop" alt="Foto 5">
+                <div class="gallery-caption">Kehangatan yang selalu kurindukan</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=400&h=400&fit=crop" alt="Foto 6">
+                <div class="gallery-caption">Cinta yang abadi untukmu</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-heart">❤</div>
+        <p class="footer-text">"Seperti gelombang yang tak pernah lelah menepi, cintaku padamu abadi selamanya."</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: rgba(139, 0, 0, 0.6);">— Pria Gelombang Laut, 2026</p>
+    </footer>
+
+    <script>
+        // Create floating particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.width = (Math.random() * 4 + 2) + 'px';
+            particle.style.height = particle.style.width;
+            particlesContainer.appendChild(particle);
+        }
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
